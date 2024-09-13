@@ -1,0 +1,568 @@
+{
+  "last_node_id": 37,
+  "last_link_id": 50,
+  "nodes": [
+    {
+      "id": 23,
+      "type": "LLM_api_loader",
+      "pos": {
+        "0": 521,
+        "1": 271,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 315,
+        "1": 130
+      },
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "model",
+          "type": "CUSTOM",
+          "links": [
+            36
+          ],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "model"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LLM_api_loader"
+      },
+      "widgets_values": [
+        "o1-mini",
+        "",
+        "",
+        false
+      ]
+    },
+    {
+      "id": 35,
+      "type": "LLM_api_loader",
+      "pos": {
+        "0": 482,
+        "1": 883,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 315,
+        "1": 130
+      },
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "model",
+          "type": "CUSTOM",
+          "links": [
+            47
+          ],
+          "shape": 3,
+          "label": "model",
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LLM_api_loader"
+      },
+      "widgets_values": [
+        "gpt-4o-mini",
+        "",
+        "",
+        false
+      ]
+    },
+    {
+      "id": 33,
+      "type": "LLM",
+      "pos": {
+        "0": 896,
+        "1": 926,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": [
+        447.27079026236106,
+        628.9248450656667
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "CUSTOM",
+          "link": 47,
+          "label": "model"
+        },
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": null,
+          "label": "images"
+        },
+        {
+          "name": "extra_parameters",
+          "type": "DICT",
+          "link": null,
+          "label": "extra_parameters"
+        },
+        {
+          "name": "system_prompt_input",
+          "type": "STRING",
+          "link": null,
+          "widget": {
+            "name": "system_prompt_input"
+          },
+          "label": "system_prompt_input"
+        },
+        {
+          "name": "user_prompt_input",
+          "type": "STRING",
+          "link": 49,
+          "widget": {
+            "name": "user_prompt_input"
+          },
+          "label": "user_prompt_input"
+        },
+        {
+          "name": "tools",
+          "type": "STRING",
+          "link": 48,
+          "widget": {
+            "name": "tools"
+          },
+          "label": "tools"
+        },
+        {
+          "name": "file_content",
+          "type": "STRING",
+          "link": null,
+          "widget": {
+            "name": "file_content"
+          },
+          "label": "file_content"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "assistant_response",
+          "type": "STRING",
+          "links": [
+            50
+          ],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "assistant_response"
+        },
+        {
+          "name": "history",
+          "type": "STRING",
+          "links": null,
+          "shape": 3,
+          "label": "history"
+        },
+        {
+          "name": "tool",
+          "type": "STRING",
+          "links": null,
+          "shape": 3,
+          "label": "tool"
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": null,
+          "shape": 3,
+          "label": "image"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LLM"
+      },
+      "widgets_values": [
+        "根据我给出的文件结构，以E:\\web_code为根目录，使用工具将这些文件依次写入",
+        " ",
+        0.7,
+        "enable",
+        "disable",
+        "disable",
+        "enable",
+        1920,
+        "",
+        "",
+        "",
+        "",
+        "",
+        100,
+        "",
+        true
+      ]
+    },
+    {
+      "id": 24,
+      "type": "LLM",
+      "pos": {
+        "0": 894,
+        "1": 271,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 444.24951171875,
+        "1": 548.9947509765625
+      },
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "CUSTOM",
+          "link": 36,
+          "label": "model"
+        },
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": null,
+          "label": "images"
+        },
+        {
+          "name": "extra_parameters",
+          "type": "DICT",
+          "link": null,
+          "label": "extra_parameters"
+        },
+        {
+          "name": "system_prompt_input",
+          "type": "STRING",
+          "link": null,
+          "widget": {
+            "name": "system_prompt_input"
+          },
+          "label": "system_prompt_input"
+        },
+        {
+          "name": "user_prompt_input",
+          "type": "STRING",
+          "link": null,
+          "widget": {
+            "name": "user_prompt_input"
+          },
+          "label": "user_prompt_input"
+        },
+        {
+          "name": "tools",
+          "type": "STRING",
+          "link": null,
+          "widget": {
+            "name": "tools"
+          },
+          "label": "tools"
+        },
+        {
+          "name": "file_content",
+          "type": "STRING",
+          "link": null,
+          "widget": {
+            "name": "file_content"
+          },
+          "label": "file_content"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "assistant_response",
+          "type": "STRING",
+          "links": [
+            46,
+            49
+          ],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "assistant_response"
+        },
+        {
+          "name": "history",
+          "type": "STRING",
+          "links": null,
+          "shape": 3,
+          "label": "history"
+        },
+        {
+          "name": "tool",
+          "type": "STRING",
+          "links": null,
+          "shape": 3,
+          "label": "tool"
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": null,
+          "shape": 3,
+          "label": "image"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LLM"
+      },
+      "widgets_values": [
+        "请根据我的要求，生成代码仓库，在生成之前要给出文件结构",
+        "生成一个用户登录的网页代码仓库",
+        0.7,
+        "enable",
+        "disable",
+        "disable",
+        "enable",
+        1920,
+        "",
+        "",
+        "",
+        "",
+        "",
+        100,
+        "",
+        true
+      ]
+    },
+    {
+      "id": 37,
+      "type": "show_text_party",
+      "pos": {
+        "0": 1400,
+        "1": 963,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": [
+        486.5724792480469,
+        586.667724609375
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 50,
+          "widget": {
+            "name": "text"
+          },
+          "label": "text"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 6,
+          "label": "STRING"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "show_text_party"
+      },
+      "widgets_values": [
+        "",
+        "所有文件已成功创建并写入到指定的目录结构中。以下是文件结构的总结：\n\n```\nuser-login-webapp/\n├── backend/\n│   ├── package.json\n│   ├── package-lock.json\n│   ├── server.js\n│   └── .env\n├── frontend/\n│   ├── index.html\n│   ├── css/\n│   │   └── style.css\n│   └── js/\n│       └── script.js\n├── README.md\n└── .gitignore\n```\n\n如果你需要进一步的帮助或有其他需求，请随时告诉我！"
+      ]
+    },
+    {
+      "id": 36,
+      "type": "files_control_tool",
+      "pos": {
+        "0": 487,
+        "1": 1117,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 315,
+        "1": 82
+      },
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "tool",
+          "type": "STRING",
+          "links": [
+            48
+          ],
+          "shape": 3,
+          "label": "tool",
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "files_control_tool"
+      },
+      "widgets_values": [
+        "E:\\web_code",
+        true
+      ]
+    },
+    {
+      "id": 32,
+      "type": "show_text_party",
+      "pos": {
+        "0": 1406,
+        "1": 276,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 486.5724792480469,
+        "1": 586.667724609375
+      },
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 46,
+          "widget": {
+            "name": "text"
+          },
+          "label": "text"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 6,
+          "label": "STRING"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "show_text_party"
+      },
+      "widgets_values": [
+        "",
+        "好的，以下是一个用户登录网页代码仓库的文件结构设计。完成文件结构设计后，我将逐步提供各个文件的代码内容。\n\n## 文件结构\n\n```\nuser-login-webapp/\n├── backend/\n│   ├── package.json\n│   ├── package-lock.json\n│   ├── server.js\n│   └── .env\n├── frontend/\n│   ├── index.html\n│   ├── css/\n│   │   └── style.css\n│   └── js/\n│       └── script.js\n├── README.md\n└── .gitignore\n```\n\n### 说明：\n\n- **backend/**: 后端部分，使用Node.js和Express框架。\n  - **package.json**: 项目依赖和脚本配置。\n  - **package-lock.json**: 锁定依赖版本。\n  - **server.js**: 服务器主文件，处理登录请求。\n  - **.env**: 存放环境变量（如数据库连接、密钥等）。\n\n- **frontend/**: 前端部分，包含HTML、CSS和JavaScript文件。\n  - **index.html**: 登录页面的HTML文件。\n  - **css/style.css**: 样式表，用于美化登录页面。\n  - **js/script.js**: 前端逻辑，如表单验证和与后端的交互。\n\n- **README.md**: 项目说明文件。\n- **.gitignore**: Git忽略文件，避免提交不必要的文件，如`node_modules`和`.env`。\n\n---\n\n## 各文件代码\n\n### 1. backend/package.json\n\n首先，初始化后端项目的`package.json`文件。你可以使用`npm init`命令生成，也可以手动创建。\n\n```json\n{\n  \"name\": \"user-login-webapp-backend\",\n  \"version\": \"1.0.0\",\n  \"description\": \"Backend for User Login Web Application\",\n  \"main\": \"server.js\",\n  \"scripts\": {\n    \"start\": \"node server.js\",\n    \"dev\": \"nodemon server.js\"\n  },\n  \"keywords\": [],\n  \"author\": \"你的名字\",\n  \"license\": \"MIT\",\n  \"dependencies\": {\n    \"bcrypt\": \"^5.1.0\",\n    \"body-parser\": \"^1.20.2\",\n    \"cors\": \"^2.8.5\",\n    \"dotenv\": \"^16.3.1\",\n    \"express\": \"^4.18.2\",\n    \"jsonwebtoken\": \"^9.0.0\"\n  },\n  \"devDependencies\": {\n    \"nodemon\": \"^3.0.1\"\n  }\n}\n```\n\n### 2. backend/.env\n\n在`.env`文件中存放环境变量。**注意**：不要将此文件提交到版本控制系统中。\n\n```env\nPORT=5000\nJWT_SECRET=your_jwt_secret_key\n```\n\n### 3. backend/server.js\n\n后端服务器的主要逻辑，处理用户登录请求。\n\n```javascript\n// server.js\nconst express = require('express');\nconst bodyParser = require('body-parser');\nconst cors = require('cors');\nconst bcrypt = require('bcrypt');\nconst jwt = require('jsonwebtoken');\nrequire('dotenv').config();\n\nconst app = express();\nconst PORT = process.env.PORT || 5000;\n\n// 中间件\napp.use(cors());\napp.use(bodyParser.json());\n\n// 模拟用户数据库\nconst users = [\n    {\n        id: 1,\n        username: 'testuser',\n        password: '$2b$10$EixZaYVK1fsbw1ZfbX3OXe.P5L5QkZrMQ8qJ/qSrzjA5gS8DkQfCG' // 'password123' 加密后的密码\n    }\n];\n\n// 登录接口\napp.post('/api/login', async (req, res) => {\n    const { username, password } = req.body;\n\n    // 查找用户\n    const user = users.find(u => u.username === username);\n    if (!user) {\n        return res.status(400).json({ message: '用户名或密码错误' });\n    }\n\n    // 验证密码\n    const isMatch = await bcrypt.compare(password, user.password);\n    if (!isMatch) {\n        return res.status(400).json({ message: '用户名或密码错误' });\n    }\n\n    // 生成JWT\n    const token = jwt.sign({ id: user.id, username: user.username }, process.env.JWT_SECRET, {\n        expiresIn: '1h'\n    });\n\n    res.json({ token, message: '登录成功' });\n});\n\n// 启动服务器\napp.listen(PORT, () => {\n    console.log(`服务器运行在端口 ${PORT}`);\n});\n```\n\n**说明**：\n- 这里使用了一个模拟的用户数据库`users`，包含一个测试用户`testuser`，密码为`password123`，已通过bcrypt加密。\n- 在实际应用中，应该连接真实的数据库（如MongoDB、MySQL等）来存储和管理用户数据。\n\n### 4. frontend/index.html\n\n前端登录页面的HTML结构。\n\n```html\n<!DOCTYPE html>\n<html lang=\"zh-CN\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>用户登录</title>\n    <link rel=\"stylesheet\" href=\"css/style.css\">\n</head>\n<body>\n    <div class=\"login-container\">\n        <h2>用户登录</h2>\n        <form id=\"loginForm\">\n            <div class=\"input-group\">\n                <label for=\"username\">用户名</label>\n                <input type=\"text\" id=\"username\" name=\"username\" required>\n            </div>\n            <div class=\"input-group\">\n                <label for=\"password\">密码</label>\n                <input type=\"password\" id=\"password\" name=\"password\" required>\n            </div>\n            <button type=\"submit\">登录</button>\n        </form>\n        <div id=\"message\"></div>\n    </div>\n    \n    <script src=\"js/script.js\"></script>\n</body>\n</html>\n```\n\n### 5. frontend/css/style.css\n\n前端登录页面的样式表。\n\n```css\n/* style.css */\n\nbody {\n    font-family: Arial, sans-serif;\n    background-color: #f2f2f2;\n}\n\n.login-container {\n    width: 300px;\n    margin: 100px auto;\n    padding: 30px;\n    background-color: #fff;\n    border-radius: 8px;\n    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);\n}\n\n.login-container h2 {\n    text-align: center;\n    margin-bottom: 20px;\n}\n\n.input-group {\n    margin-bottom: 15px;\n}\n\n.input-group label {\n    display: block;\n    margin-bottom: 5px;\n}\n\n.input-group input {\n    width: 100%;\n    padding: 8px;\n    box-sizing: border-box;\n}\n\nbutton {\n    width: 100%;\n    padding: 10px;\n    background-color: #4285f4;\n    border: none;\n    color: #fff;\n    font-size: 16px;\n    border-radius: 4px;\n    cursor: pointer;\n}\n\nbutton:hover {\n    background-color: #357ae8;\n}\n\n#message {\n    margin-top: 15px;\n    text-align: center;\n    color: red;\n}\n```\n\n### 6. frontend/js/script.js\n\n前端登录页面的JavaScript逻辑，处理表单提交和与后端的交互。\n\n```javascript\n// script.js\n\ndocument.getElementById('loginForm').addEventListener('submit', async function(e) {\n    e.preventDefault();\n\n    const username = document.getElementById('username').value.trim();\n    const password = document.getElementById('password').value.trim();\n    const messageDiv = document.getElementById('message');\n\n    if (!username || !password) {\n        messageDiv.textContent = '请填写所有字段';\n        return;\n    }\n\n    try {\n        const response = await fetch('http://localhost:5000/api/login', {\n            method: 'POST',\n            headers: {\n                'Content-Type': 'application/json'\n            },\n            body: JSON.stringify({ username, password })\n        });\n\n        const data = await response.json();\n\n        if (response.ok) {\n            messageDiv.style.color = 'green';\n            messageDiv.textContent = data.message;\n            // 可以在这里保存token，例如localStorage\n            localStorage.setItem('token', data.token);\n            // 重定向到主页或其他页面\n            // window.location.href = 'home.html';\n        } else {\n            messageDiv.style.color = 'red';\n            messageDiv.textContent = data.message;\n        }\n    } catch (error) {\n        console.error('Error:', error);\n        messageDiv.style.color = 'red';\n        messageDiv.textContent = '服务器错误，请稍后再试';\n    }\n});\n```\n\n### 7. README.md\n\n项目说明文件，介绍如何设置和运行项目。\n\n```markdown\n# 用户登录网页\n\n这是一个简单的用户登录网页示例，包含前端和后端部分。\n\n## 目录结构\n\n```\nuser-login-webapp/\n├── backend/\n├── frontend/\n├── README.md\n└── .gitignore\n```\n\n## 前端\n\n位于`frontend/`目录，使用HTML、CSS和JavaScript构建。\n\n### 运行前端\n\n你可以直接在浏览器中打开`frontend/index.html`文件，或者使用一个简单的HTTP服务器。\n\n#### 使用VS Code的Live Server插件：\n\n1. 安装[Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)插件。\n2. 右键点击`index.html`，选择“Open with Live Server”。\n\n## 后端\n\n位于`backend/`目录，使用Node.js和Express框架构建。\n\n### 安装依赖\n\n确保你已经安装了[Node.js](https://nodejs.org/)。\n\n```bash\ncd backend\nnpm install\n```\n\n### 配置环境变量\n\n在`backend/`目录下创建一个`.env`文件，内容如下：\n\n```env\nPORT=5000\nJWT_SECRET=your_jwt_secret_key\n```\n\n将`your_jwt_secret_key`替换为你的JWT密钥。\n\n### 运行后端服务器\n\n```bash\nnpm start\n```\n\n或者在开发模式下使用`nodemon`自动重启服务器：\n\n```bash\nnpm run dev\n```\n\n服务器将运行在`http://localhost:5000`。\n\n## 使用\n\n1. 启动后端服务器。\n2. 启动前端。\n3. 在登录页面输入用户名和密码。\n   - 示例用户：\n     - 用户名：`testuser`\n     - 密码：`password123`\n4. 点击登录，若成功，将显示“登录成功”消息。\n\n## 注意事项\n\n- 这是一个基础示例，未连接真实数据库。\n- 在生产环境中，请确保安全性，如HTTPS、输入验证、错误处理等。\n- 不要将`.env`文件提交到版本控制系统中，以保护敏感信息。\n```\n\n### 8. .gitignore\n\n避免将不必要的文件提交到Git仓库中。\n\n```\n# Node.js\nnode_modules/\nnpm-debug.log\n.env\n\n# VS Code\n.vscode/\n\n# Logs\nlogs\n*.log\n```\n\n---\n\n## 运行步骤总结\n\n1. **设置后端**：\n   - 进入`backend/`目录。\n   - 运行`npm install`安装依赖。\n   - 创建`.env`文件并配置环境变量。\n   - 运行`npm start`启动服务器。\n\n2. **设置前端**：\n   - 进入`frontend/`目录。\n   - 直接打开`index.html`，或使用本地HTTP服务器（如Live Server）运行。\n\n3. **测试登录**：\n   - 使用示例用户`testuser`和密码`password123`进行登录测试。\n\n---\n\n以上就是一个简单的用户登录网页代码仓库的设计和实现。如果你有更多需求或需要进一步的功能扩展，请随时告知！"
+      ]
+    }
+  ],
+  "links": [
+    [
+      36,
+      23,
+      0,
+      24,
+      0,
+      "CUSTOM"
+    ],
+    [
+      46,
+      24,
+      0,
+      32,
+      0,
+      "STRING"
+    ],
+    [
+      47,
+      35,
+      0,
+      33,
+      0,
+      "CUSTOM"
+    ],
+    [
+      48,
+      36,
+      0,
+      33,
+      5,
+      "STRING"
+    ],
+    [
+      49,
+      24,
+      0,
+      33,
+      4,
+      "STRING"
+    ],
+    [
+      50,
+      33,
+      0,
+      37,
+      0,
+      "STRING"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.8264462809917354,
+      "offset": [
+        -471.2075699597496,
+        -782.6123839621539
+      ]
+    }
+  },
+  "version": 0.4
+}
