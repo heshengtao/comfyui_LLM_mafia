@@ -8,3 +8,6 @@ Here are some optional nodes for the comfyui LLM party project. You can copy the
 1. chatTTS_node.py
 2. file_control.py
 3. new_interpreter.py
+
+## loan list
+1. [2noise/ChatTTS](https://github.com/2noise/ChatTTS)
