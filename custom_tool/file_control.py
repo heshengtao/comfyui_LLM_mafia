@@ -177,7 +177,7 @@ class files_control_tool:
 
     # OUTPUT_NODE = False
 
-    CATEGORY = "大模型派对（llm_party）/工具（tools）"
+    CATEGORY = "大模型派对（llm_party）/mafia"
 
     def time(self, folder_path, is_enable=True):
         if is_enable == False:

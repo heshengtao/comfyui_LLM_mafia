@@ -55,7 +55,7 @@ class ChatTTS_Node:
         "audio",
     )
     FUNCTION = "chattts"
-    CATEGORY = "大模型派对（llm_party）/函数（function）"
+    CATEGORY = "大模型派对（llm_party）/mafia"
 
     def chattts(
         self,
