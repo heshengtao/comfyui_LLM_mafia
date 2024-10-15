@@ -101,10 +101,16 @@ def file_control(file_path, mode="w", text_or_path=""):
     if not file_path.startswith(global_file_path):
         return "文件路径不在指定目录下"
     
+    def ensure_directory_exists(path):
+        folder_path = os.path.dirname(path)
+        if not os.path.exists(folder_path):
+            os.makedirs(folder_path)
+    
     if mode in ["w", "a"]:
         try:
+            ensure_directory_exists(file_path)
             with open(file_path, mode, encoding="utf-8") as f:
-                f.write(text_or_path + "\n")
+                f.write(text_or_path)
         except Exception as e:
             raise ValueError(f"写入文件失败: {e}")
     elif mode == "r":
@@ -120,6 +126,8 @@ def file_control(file_path, mode="w", text_or_path=""):
         except Exception as e:
             raise ValueError(f"删除文件失败: {e}")
     elif mode == "m":
+        ensure_directory_exists(file_path)
+        ensure_directory_exists(text_or_path)
         text_or_path = os.path.abspath(text_or_path)
         if not text_or_path.startswith(global_file_path):
             return "移动后的文件路径不在指定目录下"
@@ -128,6 +136,8 @@ def file_control(file_path, mode="w", text_or_path=""):
         except Exception as e:
             raise ValueError(f"移动文件失败: {e}")
     elif mode == "c":
+        ensure_directory_exists(file_path)
+        ensure_directory_exists(text_or_path)
         text_or_path = os.path.abspath(text_or_path)
         if not text_or_path.startswith(global_file_path):
             return "复制后的文件路径不在指定目录下"
@@ -136,6 +146,8 @@ def file_control(file_path, mode="w", text_or_path=""):
         except Exception as e:
             raise ValueError(f"复制文件失败: {e}")
     elif mode == "n":
+        ensure_directory_exists(file_path)
+        ensure_directory_exists(text_or_path)
         text_or_path = os.path.abspath(text_or_path)
         if not text_or_path.startswith(global_file_path):
             return "重命名后的文件路径不在指定目录下"
@@ -143,6 +155,13 @@ def file_control(file_path, mode="w", text_or_path=""):
             os.rename(file_path, text_or_path)
         except Exception as e:
             raise ValueError(f"重命名文件失败: {e}")
+    elif mode == "l":
+        try:
+            file_tree = get_file_tree(file_path)
+            file_tree = json.dumps(file_tree, ensure_ascii=False, indent=4)
+            return file_tree
+        except Exception as e:
+            raise ValueError(f"获取文件树失败: {e}")
     return "操作成功"
 
 
@@ -188,31 +207,29 @@ class files_control_tool:
         if global_file_path=="" or global_file_path==None:
             print("folder path must be set！")
             return (None,)
-        file_tree = get_file_tree(folder_path)
-        file_tree = json.dumps(file_tree, ensure_ascii=False, indent=4)
         output = [
             {
                 "type": "function",
                 "function": {
                     "name": "file_control",
-                    "description": f"用于读取、写入、追加、删除、移动、重命名、复制在{folder_path}下的文件，注意！你不能操作其他路径下的文件，写入、追加时，最好是对一个新文件执行，除非用户给定了文件。文件树如下：\n{file_tree}",
+                    "description": f"用于读取、写入、追加、删除、移动、重命名、复制在{folder_path}下的文件，注意！你不能操作其他路径下的文件，写入、追加时，最好是对一个新文件执行，除非用户给定了文件。",
                     "parameters": {
                         "type": "object",
                         "properties": {
                             "file_path": {
                                 "type": "string",
-                                "description": "在文件的绝对路径",
+                                "description": "在文件或者文件夹的绝对路径",
                             },
                             "mode": {
                                 "type": "string",
-                                "description": "w:写入，a:追加，r:读取，d:删除，m:移动，n:重命名，c:复制",
+                                "description": f"w:写入，a:追加，r:读取，d:删除，m:移动，n:重命名，c:复制，l:列出{folder_path}下的文件树",
                             },
                             "text_or_path": {
                                 "type": "string",
                                 "description": "写入或追加时，text_or_path为要写入或追加的文本,读取和删除时不需要,移动时，text_or_path为移动到的绝对路径，重命名时，text_or_path为新的文件名的绝对路径，复制时，text_or_path为复制到的绝对路径",
                             }
                         },
-                        "required": ["file_path"],
+                        "required": ["file_path","mode"],
                     },
                 },
             }
@@ -246,12 +263,3 @@ if lang == "zh_CN":
     NODE_DISPLAY_NAME_MAPPINGS = {"files_control_tool": "(危险！)本地文件控制工具"}
 else:
     NODE_DISPLAY_NAME_MAPPINGS = {"files_control_tool": "(Danger!) local file control tool"}
-
-if __name__ == "__main__":
-    # 示例用法
-    folder_path = 'D:\AI\AIhuitu\Blender_ComfyUI\Blender_ComfyUI_Mini\ComfyUI\custom_nodes\comfyui_LLM_party\KG'
-    file_tree = get_file_tree(folder_path)
-
-    # 将文件树转换为 JSON 格式
-    file_tree_json = json.dumps(file_tree, indent=4, ensure_ascii=False)
-    print(file_tree_json)
