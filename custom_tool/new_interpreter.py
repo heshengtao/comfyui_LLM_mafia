@@ -179,9 +179,9 @@ if language == "zh_CN" or language=="en_US":
     lang=language
 if lang == "zh_CN":
     NODE_DISPLAY_NAME_MAPPINGS = {
-        "new_interpreter_tool": "(危险！)万能解释器工具"
+        "new_interpreter_tool": "(危险！)万能代码执行工具"
     }
 else:
     NODE_DISPLAY_NAME_MAPPINGS = {
-        "new_interpreter_tool": "(Danger!) Omnipotent Interpreter Tool"
+        "new_interpreter_tool": "(Danger!) Omnipotent Code Execution Tool"
     }
