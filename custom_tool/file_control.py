@@ -87,8 +87,8 @@ def read_one(path):
         except UnicodeDecodeError:
             with open(path, "r", encoding="latin-1") as file:
                 text += file.read()
-
-    return text
+    out = [{"source": path,"paragraph_index":"full text" , "file_content": text}]
+    return out
 
 global_file_path = ""
 
@@ -115,8 +115,8 @@ def file_control(file_path, mode="w", text_or_path=""):
             raise ValueError(f"写入文件失败: {e}")
     elif mode == "r":
         try:
-            with open(file_path, "r", encoding="utf-8") as f:
-                res = f.read()
+            res = read_one(file_path)
+            res = json.dumps(res, ensure_ascii=False, indent=4)
             return "读取成功,内容为：" + res
         except Exception as e:
             raise ValueError(f"读取文件失败: {e}")
